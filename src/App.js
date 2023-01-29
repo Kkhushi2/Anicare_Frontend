@@ -1,11 +1,18 @@
 
-import DashBoard from './components/admin/Dashboard';
-import CardOne from './components/admin/CardOne';
-import CardTwo from "./components/admin/CardTwo"
+import DashBoard from './admin/component/Dashboard';
+
+import { Login } from '../public/Login';
+import { Routes, BrowserRouter as Router, Route } from "react-router-dom"
 function App() {
   return (
     <div>
-      <DashBoard/>
+     <Router>
+        <Routes>
+         
+          <Route element={<DashBoard />} path={"/dashboard"} />
+          <Route element={<Login/>} path={"/Login"} />
+        </Routes>
+      </Router>
     </div>
   );
 }
